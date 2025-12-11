@@ -1,4 +1,4 @@
-// public/widget.js
+
 const resultsEl = document.getElementById('results');
 const searchBtn = document.getElementById('searchBtn');
 const cityInput = document.getElementById('cityInput');
@@ -28,7 +28,7 @@ function renderList(list) {
 searchBtn.addEventListener('click', search);
 cityInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') search(); });
 
-// Добавление через POST (используем x-api-key заголовок)
+
 addForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -52,5 +52,5 @@ addForm.addEventListener('submit', async (e) => {
   search();
 });
 
-// initial load
+
 search();

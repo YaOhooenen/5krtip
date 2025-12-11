@@ -1,7 +1,7 @@
-// controllers/weatherController.js
+
 const { v4: uuidv4 } = require('uuid');
 
-// In-memory store (для учебного проекта)
+
 const forecasts = [
   {
     id: uuidv4(),
@@ -19,11 +19,11 @@ const forecasts = [
   }
 ];
 
-// GET /api/weather  — список с фильтрацией через req.query
+
 exports.list = (req, res) => {
   let result = forecasts.slice();
 
-  // Примеры query-параметров: city, minTemp, maxTemp, limit
+  
   const { city, minTemp, maxTemp, limit } = req.query;
 
   if (city) {
@@ -46,7 +46,6 @@ exports.list = (req, res) => {
   res.json({ count: result.length, data: result });
 };
 
-// GET /api/weather/:id  — использование req.params
 exports.getById = (req, res) => {
   const { id } = req.params;
   const item = forecasts.find(f => f.id === id);
@@ -54,7 +53,6 @@ exports.getById = (req, res) => {
   res.json(item);
 };
 
-// POST /api/weather  — создание новой записи
 exports.create = (req, res) => {
   const { city, temp, condition } = req.body;
   if (!city || temp === undefined) {
@@ -71,7 +69,6 @@ exports.create = (req, res) => {
   res.status(201).json(newItem);
 };
 
-// PUT /api/weather/:id  — обновление
 exports.update = (req, res) => {
   const { id } = req.params;
   const { city, temp, condition } = req.body;
@@ -86,7 +83,6 @@ exports.update = (req, res) => {
   res.json(forecasts[idx]);
 };
 
-// DELETE /api/weather/:id
 exports.remove = (req, res) => {
   const { id } = req.params;
   const idx = forecasts.findIndex(f => f.id === id);
@@ -94,3 +90,4 @@ exports.remove = (req, res) => {
   const removed = forecasts.splice(idx, 1)[0];
   res.json({ removed });
 };
+
