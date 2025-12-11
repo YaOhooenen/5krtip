@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Погодный виджет</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="widget">
+    <h1>Weather widget</h1>
+    <div>
+      <input id="cityInput" placeholder="City (e.g. Berlin)" />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div id="results"></div>
+    <hr/>
+    <h3>Add city</h3>
+    <form id="addForm">
+      <input name="city" placeholder="City" required />
+      <input name="temp" type="number" placeholder="Temp" required />
+      <input name="condition" placeholder="Condition" />
+      <button type="submit">Add (POST)</button>
+    </form>
+  </div>
+  <script src="/widget.js"></script>
+</body>
+</html>
