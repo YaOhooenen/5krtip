@@ -1,6 +1,5 @@
 Простой погодный виджет
 
-http://localhost:3000
 
 # Функционал
 - GET /api/weather — получить список прогнозов; поддерживает query: `city`, `minTemp`, `maxTemp`, `limit`.
